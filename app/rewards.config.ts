@@ -3,7 +3,7 @@
 // Each entry: { score: points needed, code: "YOUR-CODE-HERE" }
 
 export const REWARDS = [
-  { score: 25, code: "BEARISH-TEST-25" },
-  { score: 50, code: "BEARISH-STACK-50" },
-  { score: 100, code: "BEARISH-STACK-100" },
+  { score: 25, code: "STACKER0547" },
+  { score: 50, code: "STACKMASTER984" },
+  { score: 100, code: "STACKCHAMP5000" },
 ];
