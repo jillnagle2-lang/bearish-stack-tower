@@ -332,7 +332,7 @@ export default function StackTower() {
 
     const baseWidth = w * 0.6;
     const baseX = (w - baseWidth) / 2;
-    const baseY = game.canvasHeight - BLOCK_HEIGHT - 20;
+    const baseY = game.canvasHeight - BLOCK_HEIGHT - 80;
 
     // Base platform
     game.stack = [
