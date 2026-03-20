@@ -143,6 +143,7 @@ export default function StackTower() {
     bestScore: 0,
     rewardsShown: new Set<number>(),
     perfectCombo: 0,
+    startedAt: 0,
   });
 
   // ─── Load best score ────────────────────────────────────────────────────────
@@ -353,6 +354,7 @@ export default function StackTower() {
     };
 
     game.phase = "sliding";
+    game.startedAt = Date.now();
     game.direction = 1;
     game.speed = BASE_SPEED;
     game.score = 0;
@@ -375,6 +377,8 @@ export default function StackTower() {
   const dropBlock = useCallback(() => {
     const game = gameRef.current;
     if (game.phase !== "sliding" || !game.currentBlock) return;
+    // Grace period: ignore taps for 500ms after game starts
+    if (Date.now() - game.startedAt < 500) return;
     game.phase = "dropping";
     game.dropVelocity = 0;
   }, []);
@@ -868,7 +872,7 @@ export default function StackTower() {
             Tap to place the moving blocks. Stack as high as you can and earn Discord codes at 25, 50, and 100 points!
           </p>
 
-          {imagesLoaded ? (
+          {imagesLoaded && (
             <p
               style={{
                 fontSize: "1.2rem",
@@ -879,16 +883,6 @@ export default function StackTower() {
               }}
             >
               Tap to Start
-            </p>
-          ) : (
-            <p
-              style={{
-                fontSize: "1rem",
-                color: "#CF8D6F",
-                marginBottom: "2rem",
-              }}
-            >
-              Loading…
             </p>
           )}
 
