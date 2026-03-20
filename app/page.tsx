@@ -857,10 +857,24 @@ export default function StackTower() {
 
           <p
             style={{
-              fontSize: "1.2rem",
+              fontSize: "0.95rem",
               color: "#FEC091",
+              marginBottom: "0.5rem",
+              maxWidth: "280px",
+              textAlign: "center",
+              lineHeight: 1.5,
+            }}
+          >
+            Stack as high as you can and earn Discord codes at 25, 50, and 100 points!
+          </p>
+
+          <p
+            style={{
+              fontSize: "1.2rem",
+              color: "#FFC078",
               animation: "pulse 2s ease-in-out infinite",
               marginBottom: "2rem",
+              fontWeight: 700,
             }}
           >
             {imagesLoaded ? "Tap to Start" : "Loading…"}
