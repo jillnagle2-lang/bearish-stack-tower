@@ -660,6 +660,7 @@ export default function StackTower() {
 
   const resumeFromReward = useCallback(() => {
     const game = gameRef.current;
+    game.startedAt = Date.now(); // reuse grace period to prevent instant drop
     game.phase = "sliding";
     setUiState("playing");
   }, []);
